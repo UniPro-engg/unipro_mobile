@@ -1,17 +1,25 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {StatusBar} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
 
-import { APP_NAME } from './src/utils/values';
-import {PRIMARY_BACKGROUND, DARK_TEXT} from './src/utils/colors'
+import {persistor, store} from './src/redux/store';
+import AppNavigation from './src/navigation/AppNavigation';
 
 const App = () => {
-  return(
+  return (
     <>
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: PRIMARY_BACKGROUND}}>
-        <Text style={{fontSize: 28, fontWeight: 'bold', color: DARK_TEXT}}>{APP_NAME}</Text>
-      </View>
+      <StatusBar barStyle="light-content" hidden={false} />
+      <NavigationContainer>
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <AppNavigation />
+          </PersistGate>
+        </Provider>
+      </NavigationContainer>
     </>
-  )
+  );
 };
 
 export default App;
