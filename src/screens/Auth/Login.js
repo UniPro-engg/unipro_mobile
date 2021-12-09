@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 import {View, Text, TouchableOpacity, TextInput, StyleSheet} from 'react-native';
 
 import CustomIcon from '../../components/CustomIcon'
@@ -7,6 +8,8 @@ import { REGULAR, EXTRA_BOLD, BOLD, APP_NAME } from '../../utils/values';
 import Button from '../../components/Button'
 
 const Login = () => {
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [secureText, setSecureText] = useState(true);
@@ -50,7 +53,7 @@ const Login = () => {
             </TouchableOpacity>
           </View>
 
-          <Button onPress={() => console.log('Pressed Login Button')} text={"Login"} buttonStyles={{width: '100%', marginTop: 30}} />
+          <Button onPress={() => dispatch({type: 'LOGIN'})} text={"Login"} buttonStyles={{width: '100%', marginTop: 30}} />
         </View>
       </View>
     </>

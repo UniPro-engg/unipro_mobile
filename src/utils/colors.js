@@ -9,3 +9,7 @@ export const LIGHT_TEXT = '#FFFFFF'
 //BACKGROUND
 export const PRIMARY_BACKGROUND = '#FFFFFF'
 export const SECONDARY_BACKGROUND = '#DEE0E1'
+
+//BOTTOM TAB
+export const ACTIVE = '#69779B'
+export const INACTIVE = '#CCCCCC'
