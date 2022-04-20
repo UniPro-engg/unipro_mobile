@@ -27,7 +27,7 @@ const AppNavigation = () => {
       screenOptions={{
         headerShown: false,
       }}>
-        {loggedIn ? <Stack.Screen name="BottomTab" component={BottomTabNavigation} /> : <Stack.Screen name="Login" component={AuthNavigation} />}
+        {loggedIn ? <Stack.Screen name="Feed" component={BottomTabNavigation} /> : <Stack.Screen name="Auth" component={AuthNavigation} />}
     </Stack.Navigator>
   );
 };
@@ -54,7 +54,7 @@ const BottomTabNavigation = ({}) => {
         tabBarInactiveTintColor: INACTIVE,
         tabBarActiveTintColor: ACTIVE,
         tabBarStyle: {
-          backgroundColor: '#fff',
+          backgroundColor: '#ffffff',
         },
       }}>
       <BottomTab.Screen
